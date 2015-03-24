@@ -230,7 +230,6 @@ form input[type="text"], form input[type="password"] {
 /*=======================================================*/
 /* style specific for admin ============================*/
 /*=====================================================*/
-
 .admin-content {
 	margin: 0;
 	padding: 10px;
@@ -256,7 +255,33 @@ form input[type="text"], form input[type="password"] {
 	text-decoration: none;
 	color: red;
 }
-
+.admin_menu {
+	margin: 0em auto;
+	width: 850px;
+	height: 250px;
+}
+.menu_option h2 {
+	display: inline;
+	color: white;
+	width: 30%;
+}
+.menu_option {
+	padding: 2em 0em;
+	width: 30%;
+	text-align: center;
+	float: left;
+}
+.admin_icons {
+}
+.admin_icons[role=page_manger] {
+	width: 250px;
+}
+.admin_icons[role=user_manger] {
+	width: 180px;
+}
+.admin_icons[role=change_password] {
+	width: 155px;
+}
 /*=======================================================*/
 /* style specific for the image upload section =========*/
 /*=====================================================*/
@@ -386,15 +411,16 @@ input[type="submit"] {
 /* Layout for manager user table========================*/
 /*=====================================================*/
 .half_left, .half_right {
-	max-width: 45%;
 	display: inline-block;
 	height: 25em;
 	overflow: auto;
 }
 .half_left {
+	max-width: 50%;
 	margin-left: 2em;
 }
 .half_right {
+	max-width: 40%;
 	text-align: center;
 	margin-right: 2em;
 	float: right;
@@ -433,12 +459,31 @@ td {
 	color: white;
 }
 /*=======================================================*/
-/* Layout for manager page===============================*/
+/* Layout for manager page ==============================*/
 /*=====================================================*/
 .white_content {
 	background: rgba(230, 230, 240, .5);
 }
 .page_type {
+	color: white;
 	padding: 0.25em;
 	display: inline-block;
+}
+/*=======================================================*/
+/* Text page layout ===============================*/
+/*=====================================================*/
+.text-display {
+	color: white;
+	-webkit-box-sizing: border-box;
+	-mox-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	margin-top: 10px;
+	overflow: hidden;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: rgba(230, 230, 240, .7);
+}
+.text-display h1 {
+	text-align: center;
 }

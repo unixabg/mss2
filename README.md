@@ -12,4 +12,3 @@ git clone https://github.com/johnburd/mss2
 ```
 ## Getting started
 The default username is "admin" and the password is "test".
-
