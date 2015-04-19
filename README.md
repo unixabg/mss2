@@ -11,4 +11,9 @@ My Simple Site 2 is an open source website template.
 git clone https://github.com/johnburd/mss2
 ```
 ## Getting started
-The default username is "admin" and the password is "test".
+The default username is "admin" and the password is "test".  
+You may have to change the file owner of "./pages"  
+Example:
+```
+chown www-data:www-data pages
+```
