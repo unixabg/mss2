@@ -8,7 +8,7 @@ if (isset($_POST['password'])) {
 	$new_password = md5($_POST['password']);
 	$old_password = md5($_POST['old_password']);
 	$password_check = md5($_POST['password_check']);
-	$file = file_get_contents("./users/$username.txt");
+	$file = file_get_contents("./users/$username");
 	$explode = explode('#', "$file");
 	$file_password = $explode['1'];
 	if ($new_password == $password_check) {
