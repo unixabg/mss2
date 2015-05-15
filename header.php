@@ -6,13 +6,17 @@
 			<ul>
 				<li><a href=<?php if(!$_SESSION['username']) { echo "\"./index.php\""; } else { echo "\"./admin.php\""; } ?>>Home</a></li>
 				<?php
-				$pages = scandir("./pages");
-				if (count($pages) > '2') {
-					foreach ($pages as $page) {
-						if ($page != "." && $page != "..") {
-							if (is_dir("./pages/$page")) {
-								$type = file_get_contents("./pages/$page/type");
-								echo "<li><a href=\"./pages.php?page=$page&type=$type\">$page</a></li>";
+				$types = scandir("./pages");
+				if (count($types) > '2') {
+					foreach ($types as $type) {
+						if ($type != "." && $type != "..") {
+							if (is_dir("./pages/$type")) {
+								$pages = scandir("./pages/$type/");
+								foreach ($pages as $page) {
+									if ($page != "." && $page != ".." && $page != "icon.png" && $page != "edit.php" && $page != "display.php" && $page != "content.txt") {
+										echo "<li><a href=\"./pages.php?page=$page&type=$type\">$page</a></li>";
+									}
+								}
 							}
 						}
 					}

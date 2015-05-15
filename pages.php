@@ -28,6 +28,8 @@ $type = $_GET['type'];
 				}
 			}
 			echo "</header> <!-- end [role=\"banner\"] -->";
+			include("./pages/$type/display.php");
+			/*
 			if ($type == "image_page") {
 			?>
 			<section class="img-display">
@@ -68,6 +70,7 @@ $type = $_GET['type'];
 			</secion>
 		<?php
 		}
+		*/
 		?>
 	</section> <!-- end section.main -->
 </div> <!-- end div.container -->

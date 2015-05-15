@@ -1,36 +1,15 @@
-<?php
-session_start();
-if(!$_SESSION['username']) {
-	header("Location: ./index.php");
-}
-?>
-<html>
-<head>
-<?php include("header.php"); ?>
-<script src="./js/logoslide.js"></script>
-<script src="./js/imgPreview.js"></script>
-</head>
-<div class="container">
-	<section class="main">
-		<header role="banner"> <!-- begin content for the page -->
-			<h1>Welcome</h1>
-		</header> <!-- end [role="banner"] -->
-		<?php include("slider.php"); ?>
 		<section class="img-upload">
-				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
+				<form action="<?php echo $_SERVER['PHP_SELF']; ?>?page=page&type=basic" method="POST" enctype="multipart/form-data">
 					<div class="upload-location">
 						<label for="updir">This image upload is for </label>
 						<select name="updir">
 							<option value="tab">Option</option>
 							<?php
-							$pages = scandir("./pages");
+							$pages = scandir("./pages/basic");
 							if (count($pages) > '2') {
 								foreach ($pages as $page) {
-									if ($page != "." && $page != "..") {
-										$type = file_get_contents("./pages/$page/type");
-										if ($type == "image_page") {
-											echo "<option value=\"./pages/$page\">$page</a>";
-										}
+									if ($page != "." && $page != ".." && $page != "icon.png" && $page != "edit.php" && $page != "display.php" && $page != "content.txt") {
+											echo "<option value=\"./pages/basic/$page\">$page</a>";
 									}
 								}
 							}
@@ -83,8 +62,3 @@ if(!$_SESSION['username']) {
 				?>
 			<p class="upstatus">Upload status: <?php echo $upstatus; ?></p>
 		</section> <!-- end section.img-upload -->
-	</section> <!-- end section.main -->
-</div> <!-- end div.container -->
-
-</body>
-</html>
