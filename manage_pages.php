@@ -51,7 +51,7 @@ if(!$_SESSION['username']) {
 								if ($type != "." && $type != "..") {
 									$pages = scandir("./pages/$type");
 									foreach ($pages as $page) {
-										if ($page != "." && $page != ".." && $page != "icon.png" && $page != "edit.php" && $page != "display.php" && $page != "content.txt") {
+										if (is_dir("./pages/$type/$page") && $page != "." && $page != "..") {
 											echo "<tr>
 													<td>$page</td>
 													<td>$type</td>

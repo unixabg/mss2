@@ -13,7 +13,7 @@
 							if (is_dir("./pages/$type")) {
 								$pages = scandir("./pages/$type/");
 								foreach ($pages as $page) {
-									if ($page != "." && $page != ".." && $page != "icon.png" && $page != "edit.php" && $page != "display.php" && $page != "content.txt") {
+									if (is_dir("./pages/$type/$page") && $page != "." && $page != "..") {
 										echo "<li><a href=\"./pages.php?page=$page&type=$type\">$page</a></li>";
 									}
 								}
