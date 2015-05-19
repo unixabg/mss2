@@ -1,0 +1,30 @@
+#player {
+	z-index: -1;
+	width: 100%;
+	margin-top: 4em;
+}
+.audio_container {
+	background-color: rgba(100, 100, 100, 0.7);
+	width: 99%;
+	margin: 1em auto;
+	list-style-type: none;
+	border-radius: 5px;
+	padding: 0em;
+}
+.audio_container li {
+	margin: 0em;
+	width: calc(100% - 1em);
+	border-bottom: 1px solid;
+	padding: 0.5em;
+}
+.audio_container li a {
+	color: white;
+	text-decoration: none;
+}
+.audio_container li a:hover {
+	color: #2ECCFA;
+}
+.audio_title {
+	padding: 0em;
+	margin: 0em;
+}
