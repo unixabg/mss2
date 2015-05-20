@@ -26,11 +26,14 @@
 	}
 	?>
 	<div class="upload-select">
+		<link rel="stylesheet" href="./pages/audio/style.css"/>
 		<form action="<?php echo $_SERVER['PHP_SELF']."?page=$selected_page"; ?>&type=audio" method="POST" enctype="multipart/form-data">
+		<div class="edit_font">
 			Audio file must be in mp3 format.</br >
-			File Name:<input type="text" name="name"/>
-			Audio file:<input type="file" name="audio_file"/>
+			<div class="label">File Name:</div><input type="text" name="name" id="file_name"/>
+			<div class="label">Audio file:</div><input type="file" name="audio_file"/>
 			<input type="submit" value="Upload"/>
+		</div>
 		</form>
 	</div>
 </section>

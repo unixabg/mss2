@@ -28,3 +28,19 @@
 	padding: 0em;
 	margin: 0em;
 }
+form {
+}
+.edit_font {
+	font-weight: 100;
+}
+.label {
+	float: left;
+	display: inline;
+}
+input {
+}
+#file_name {
+}
+input[type=submit] {
+	margin-top: 1em;
+}
