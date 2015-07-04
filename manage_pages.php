@@ -20,10 +20,6 @@ if(!$_SESSION['username']) {
 				<div class="half_left">
 					<form action="./new_page.php" method="POST">
 						<input type="text" name="page_name" placeholder="Page Name">
-<<<<<<< HEAD
-						<div class="page_type">Image Page<input type="radio" name="page_style" value="image_page" id="image_page"><label for="image_page" ><img src="./img/image_page.png" alt="Image page"/></label></div>
-						<div class="page_type">Text Page<input type="radio" name="page_style" value="text_page" id="text_page"><label for="text_page"><img src="./img/text_page.png" alt="Text page"/></label></div>
-=======
 						<?php
 						$types = scandir('./pages/');
 						foreach ($types as $type) {
@@ -32,7 +28,6 @@ if(!$_SESSION['username']) {
 							}
 						}
 						?>
->>>>>>> fdc9cd5... Updated code for modular design.
 						<input type="submit" value="Submit">
 					</form>
 				</div>
