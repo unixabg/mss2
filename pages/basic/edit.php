@@ -28,18 +28,18 @@
 				<?php
 				date_default_timezone_set('UTC');
 
-				$updir = $_POST['updir'];
-				$captext = $_POST['caption'];
-				$file_name = $_FILES['file']['name'];
-				$file_type = $_FILES['file']['type'];
-				$file_size = $_FILES['file']['size'];
-				$file_tmp = $_FILES['file']['tmp_name'];
-				$extension = end(explode(".", $file_name));
-				$timestamp = date('YmdHis');
-				$max_size= 5000000;
 				if(!isset($_POST['init'])) {
 					$upstatus = "";
 				} else {
+					$updir = $_POST['updir'];
+					$captext = $_POST['caption'];
+					$file_name = $_FILES['file']['name'];
+					$file_type = $_FILES['file']['type'];
+					$file_size = $_FILES['file']['size'];
+					$file_tmp = $_FILES['file']['tmp_name'];
+					$extension = end(explode(".", $file_name));
+					$timestamp = date('YmdHis');
+					$max_size= 5000000;
 					if(isset($file_name)) {
 						if(($extension == "jpg" || $extension == "png" || $extension == "jpeg"
 						|| $extension == "JPG" || $extension == "PNG" || $extension == "JPEG") && ($file_size < $max_size)) {
