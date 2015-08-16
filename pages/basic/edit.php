@@ -1,28 +1,17 @@
 		<section class="img-upload">
-				<form action="<?php echo $_SERVER['PHP_SELF']; ?>?page=page&type=basic" method="POST" enctype="multipart/form-data">
+				<form action="<?php echo $_SERVER['PHP_SELF']; ?>?page=<?php echo $_GET['page']; ?>&type=basic" method="POST" enctype="multipart/form-data">
 					<div class="upload-location">
-						<label for="updir">This image upload is for </label>
-						<select name="updir">
-							<option value="tab">Option</option>
-							<?php
-							$pages = scandir("./pages/basic");
-							if (count($pages) > '2') {
-								foreach ($pages as $page) {
-									if ($page != "." && $page != ".." && $page != "icon.png" && $page != "edit.php" && $page != "display.php" && $page != "content.txt") {
-											echo "<option value=\"./pages/basic/$page\">$page</option>";
-									}
-								}
-							}
-							?>
-						</select>
+						<?php
+							echo "<label for=\"updir\">This image upload is for page ".$_GET['page'].".</label>";
+						?>
 					</div>
 					<div class="upload-select">
 						<input multiple type="file" value="Choose File" name="file" onchange="readURL(this);"><br>
 						<img id="imgPreview" src="#" alt="your image" onError="this.onerror=null;this.src='./img/noimage.png';"/><br>
 						<input type="textarea" role="caption-input" name="caption" autocomplete="off" placeholder="Caption..." />
+						<input type="hidden" name="updir" value="./pages/basic/<?php echo $_GET['page']; ?>" />
 						<input type="hidden" name="init" value="true" />
 						<input type="submit" value="upload" />
-
 					</div>
 				</form>
 				<?php
