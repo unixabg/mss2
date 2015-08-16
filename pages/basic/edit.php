@@ -9,7 +9,7 @@
 							if (count($pages) > '2') {
 								foreach ($pages as $page) {
 									if ($page != "." && $page != ".." && $page != "icon.png" && $page != "edit.php" && $page != "display.php" && $page != "content.txt") {
-											echo "<option value=\"./pages/basic/$page\">$page</a>";
+											echo "<option value=\"./pages/basic/$page\">$page</option>";
 									}
 								}
 							}
