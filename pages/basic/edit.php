@@ -1,19 +1,3 @@
-		<section class="img-upload">
-				<form action="<?php echo $_SERVER['PHP_SELF']; ?>?page=<?php echo $_GET['page']; ?>&type=basic" method="POST" enctype="multipart/form-data">
-					<div class="upload-location">
-						<?php
-							echo "<label for=\"updir\">This image upload is for page ".$_GET['page'].".</label>";
-						?>
-					</div>
-					<div class="upload-select">
-						<input multiple type="file" value="Choose File" name="file" onchange="readURL(this);"><br>
-						<img id="imgPreview" src="#" alt="your image" onError="this.onerror=null;this.src='./img/noimage.png';"/><br>
-						<input type="textarea" role="caption-input" name="caption" autocomplete="off" placeholder="Caption..." />
-						<input type="hidden" name="updir" value="./pages/basic/<?php echo $_GET['page']; ?>" />
-						<input type="hidden" name="init" value="true" />
-						<input type="submit" value="upload" />
-					</div>
-				</form>
 				<?php
 				date_default_timezone_set('UTC');
 
@@ -49,5 +33,41 @@
 					}
 				}
 				?>
+		<section class="img-upload">
+				<form action="<?php echo $_SERVER['PHP_SELF']; ?>?page=<?php echo $_GET['page']; ?>&type=basic" method="POST" enctype="multipart/form-data">
+					<div class="upload-location">
+						<?php
+						echo "<label for=\"updir\">This image upload is for page ".$_GET['page'].".</label>";
+						?>
+					</div>
+						<?php
+						// include first 16 lines of images.php
+						$array = file("./pages/basic/".$_GET['page']."/images.php");
+						$count = count($array);
+						for($i = 0; $i < $count; $i++) {
+							echo $array[$i];
+						}
+						// create blank images so total fills 4 by 4 grid
+						$line_count = count($array);
+						if($line_count[1] == '') {
+							$line_count--;
+						}
+						if($line_count <= 15) {
+							for($i = $line_count; $i < 15; $i++) {
+								echo "<div class=\"img-container\"><img src=\"./img/noimage.png\" title=\"\" /></div>";
+							}
+						}
+						?>
+
+					<div class="upload-select">
+						<img id="imgPreview" src="#" alt="your image" onError="this.onerror=null;this.src='./img/noimage.png';"/><br>
+						<input multiple type="file" value="Choose File" name="file" onchange="readURL(this);"><br>
+						<input type="textarea" role="caption-input" name="caption" autocomplete="off" placeholder="Caption..." />
+						<input type="hidden" name="updir" value="./pages/basic/<?php echo $_GET['page']; ?>" />
+						<input type="hidden" name="init" value="true" />
+						<input type="submit" value="upload" />
+					</div>
 			<p class="upstatus">Upload status: <?php echo $upstatus; ?></p>
+				</form>
 		</section> <!-- end section.img-upload -->
+
