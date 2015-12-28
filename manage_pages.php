@@ -50,7 +50,7 @@ if(!$_SESSION['username']) {
 											echo "<tr>
 													<td>$page</td>
 													<td>$type</td>
-													<td><a href=\"page_action.php?page=$page&type=$type\">Delete</a>/<a href=\"./edit.php?page=$page&type=$type\">Edit</a></td>
+													<td><a href=\"page_action.php?page=$page&type=$type\" onclick=\"return confirm('Are you sure you want to delete the page and contents of $page?');\">Delete</a>/<a href=\"./edit.php?page=$page&type=$type\">Edit</a></td>
 												</tr>";
 										}
 									}
